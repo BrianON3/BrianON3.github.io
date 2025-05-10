@@ -1,10 +1,8 @@
-index.html
-@@ -1,61 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apoyá mi App</title>
   <style>
     body {
@@ -34,6 +32,15 @@ index.html
       line-height: 1.5;
     }
 
+    input[type="number"] {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
     .donate-btn {
       background-color: #00ff99;
       color: #000;
@@ -51,18 +58,37 @@ index.html
       transform: scale(1.05);
       box-shadow: 0 0 20px rgba(0, 255, 153, 0.7);
     }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
   </style>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi App</title>
 </head>
 <body>
   <h1>Apoyá mi App</h1>
   <p>Si disfrutás la aplicación y querés ayudar a mejorarla, considerá hacer una donación. ¡Gracias por tu apoyo!</p>
-  <a href="https://www.paypal.com/donate?business=brianemp96@gmail.com&amount=5&currency_code=USD" target="_blank">
-  <button class="donate-btn">Donar 5 USD</button>
-  </a>
-  <h1>Bienvenido/a</h1>
-  <p>Gracias por apoyar mi aplicación.</p>
+
+  <input type="number" id="donationAmount" placeholder="Cantidad en USD" min="1" />
+  <button class="donate-btn" onclick="donar()">Donar</button>
+  <p id="errorMsg" class="error"></p>
+
+  <script>
+    function donar() {
+      const amountInput = document.getElementById("donationAmount");
+      const amount = parseFloat(amountInput.value);
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!amount || amount <= 0) {
+        errorMsg.textContent = "Por favor, ingresa un monto válido.";
+        return;
+      }
+
+      errorMsg.textContent = "";
+      const paypalUrl = `https://www.paypal.com/donate?business=brianemp96@gmail.com&amount=${amount}&currency_code=USD`;
+      window.open(paypalUrl, "_blank");
+    }
+  </script>
 </body>
 </html>
