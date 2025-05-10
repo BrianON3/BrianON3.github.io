@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apoyá mi App</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00ff99;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .donate-btn {
+      background-color: #00ff99;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(0, 255, 153, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .donate-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 153, 0.7);
+    }
+  </style>
 </head>
 <body>
-  <h1>Bienvenido/a</h1>
-  <p>Gracias por apoyar mi aplicación.</p>
+  <h1>Apoyá mi App</h1>
+  <p>Si disfrutás la aplicación y querés ayudar a mejorarla, considerá hacer una donación. ¡Gracias por tu apoyo!</p>
+  <a href="https://www.paypal.com/donate/tu_enlace_aqui" target="_blank">
+    <button class="donate-btn">Donar</button>
+  </a>
 </body>
 </html>
