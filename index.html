@@ -71,20 +71,20 @@
     }
 
     .video-container {
+      position: relative;
       width: 100%;
-      max-width: 560px;
-      aspect-ratio: 16 / 9;
-      margin: 20px auto;
+      height: 0;
+      padding-bottom: 56.25%; /* Proporción 16:9 */
       overflow: hidden;
-      border-radius: 12px; /* opcional: da bordes redondeados */
-      box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
     }
 
     .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
-      display: block;
     }
   </style>
 </head>
